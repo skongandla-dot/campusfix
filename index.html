@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CampusFix - report and track campus issues easily." />
+  <title>CampusFix | Campus Issue Reporting &amp; Tracking</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Made for Lovely Professional University students</span>
+        <h1>Campus problems, <span>tracked to solved</span></h1>
+        <p>
+          Report WiFi, water, electricity, hostel and classroom issues in one place.
+          Follow every complaint from Pending to Resolved, no more asking around.
+        </p>
+        <div class="hero-actions" id="hero-actions">
+          <a href="register.html" class="btn btn-primary">Get Started</a>
+          <a href="login.html" class="btn btn-outline">Login</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">The problem we are solving</h2>
+        <p class="section-sub">
+          On a large campus, students often do not know who to tell about a problem,
+          and once they report it, they cannot see what happened next.
+        </p>
+        <div class="grid grid-3">
+          <div class="card feature-card">
+            <div class="icon">&#10067;</div>
+            <h3>No clear channel</h3>
+            <p>Complaints get lost between phone calls, notes and word of mouth.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128337;</div>
+            <h3>No tracking</h3>
+            <p>Students cannot see whether anyone has even looked at their issue.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128202;</div>
+            <h3>No overview</h3>
+            <p>Staff cannot easily see which problems are most urgent or repeated.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <p class="section-sub">Everything needed to report, track and resolve issues.</p>
+        <div class="grid grid-3">
+          <div class="card feature-card">
+            <div class="icon">&#128221;</div>
+            <h3>Easy reporting</h3>
+            <p>Choose a category, add location and priority, describe the problem.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128269;</div>
+            <h3>Search and filter</h3>
+            <p>Find any issue by keyword, status or category in a click.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#9989;</div>
+            <h3>Live status</h3>
+            <p>See Pending, In Progress and Resolved updates on your dashboard.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128274;</div>
+            <h3>Secure login</h3>
+            <p>Separate student and admin accounts with protected pages.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128200;</div>
+            <h3>Admin dashboard</h3>
+            <p>Admins see all issues with counts and can update status instantly.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="icon">&#128241;</div>
+            <h3>Works on mobile</h3>
+            <p>Fully responsive design for phones, tablets and laptops.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub">Three simple steps.</p>
+        <div class="grid grid-3">
+          <div class="card feature-card">
+            <div class="step-num">1</div>
+            <h3>Register and login</h3>
+            <p>Create a student account using your email.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="step-num">2</div>
+            <h3>Report the issue</h3>
+            <p>Fill in the short form with details of the problem.</p>
+          </div>
+          <div class="card feature-card">
+            <div class="step-num">3</div>
+            <h3>Track progress</h3>
+            <p>Watch the status change as the admin team works on it.</p>
+          </div>
+        </div>
+        <p style="text-align:center;margin-top:28px">
+          Need details? Read the <a href="instructions.html">full instructions</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" style="background:#fff">
+      <div class="container" style="max-width:760px;text-align:center">
+        <h2 class="section-title">About this project</h2>
+        <p style="color:var(--muted)">
+          CampusFix is a CA1 problem-statement project built with HTML, CSS and JavaScript.
+          Data is stored in the browser using localStorage, so no server is needed.
+          Future scope: a real backend with a database, email notifications and photo uploads.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // If already logged in, change the hero buttons to a dashboard shortcut
+    const current = getSession();
+    if (current) {
+      const dest = current.role === "admin" ? "admin.html" : "dashboard.html";
+      document.getElementById("hero-actions").innerHTML =
+        '<a href="' + dest + '" class="btn btn-primary">Go to my ' +
+        (current.role === "admin" ? "Admin Panel" : "Dashboard") + "</a>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructions | CampusFix</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <main class="container" style="padding-bottom:50px">
+    <div class="page-header">
+      <h1>How to use CampusFix</h1>
+      <p>Read this once and you are ready to go.</p>
+    </div>
+
+    <div class="grid" style="gap:20px">
+      <section class="card">
+        <h2 style="margin-bottom:10px">For students</h2>
+        <ol class="info-list">
+          <li>Click <a href="register.html">Register</a>, enter your name, email and a password (6+ characters with letters and numbers).</li>
+          <li>Login with the same email and password. You will land on your Dashboard.</li>
+          <li>Fill the <strong>Report an issue</strong> form: title, category, location, priority and a clear description.</li>
+          <li>Press <strong>Submit issue</strong>. It appears in <strong>My issues</strong> with the status Pending.</li>
+          <li>Use search and filters to find older issues. You can delete your own issue if it was reported by mistake.</li>
+          <li>Press <strong>Logout</strong> when you are finished, especially on shared computers.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-bottom:10px">Understanding status</h2>
+        <ul class="info-list">
+          <li><span class="tag Pending">Pending</span> Your issue is received and waiting to be checked.</li>
+          <li><span class="tag In-Progress">In Progress</span> The team is working on it.</li>
+          <li><span class="tag Resolved">Resolved</span> The problem has been fixed.</li>
+        </ul>
+        <h3 style="margin:16px 0 8px">Priority levels</h3>
+        <ul class="info-list">
+          <li><span class="prio High">High</span> Safety risk or something affecting many people (no water, power cut).</li>
+          <li><span class="prio Medium">Medium</span> Important but not an emergency (slow WiFi in a block).</li>
+          <li><span class="prio Low">Low</span> Minor problem (a broken chair).</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-bottom:10px">For admins / staff</h2>
+        <ol class="info-list">
+          <li>Register as <strong>Admin / Staff</strong> using the access code from the campus office, or use the demo admin account on the login page.</li>
+          <li>Open the <strong>Admin Panel</strong> to see every issue and the totals at the top.</li>
+          <li>Change an issue's status using the dropdown on its card. The student sees the update on their dashboard.</li>
+          <li>Use search and filters to focus on urgent categories first.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 style="margin-bottom:10px">Good reporting tips</h2>
+        <ul class="info-list">
+          <li>Write a short, specific title (for example "No water in Block 32, 2nd floor").</li>
+          <li>Give the exact location so staff can find it quickly.</li>
+          <li>Mention since when the problem has been happening.</li>
+          <li>Report each problem separately, one form per issue.</li>
+        </ul>
+      </section>
+
+      <section class="card faq">
+        <h2 style="margin-bottom:12px">FAQ</h2>
+        <details>
+          <summary>I forgot my password. What now?</summary>
+          <p>This demo stores accounts in your browser only, so there is no reset. Register again with a new email.</p>
+        </details>
+        <details>
+          <summary>Why can I not see my issues on another device?</summary>
+          <p>Data is saved in the browser you used (localStorage). A full version would use an online database.</p>
+        </details>
+        <details>
+          <summary>Can other students see my issues?</summary>
+          <p>No. Students see only their own issues. Admins can see all issues.</p>
+        </details>
+        <details>
+          <summary>Is my data safe?</summary>
+          <p>Passwords are not stored as plain text, but this is a learning project. Do not use a password you use elsewhere.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

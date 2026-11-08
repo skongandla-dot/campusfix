@@ -1,0 +1,294 @@
+/* ==========================================================
+   CampusFix - Main Stylesheet
+   Theme: Navy (#0f2a4a) + Teal (#14b8a6) + Light grey background
+   Sections: 1 Variables | 2 Base | 3 Navbar | 4 Buttons | 5 Hero
+             6 Sections/Cards | 7 Forms | 8 Dashboard | 9 Issues
+             10 Footer | 11 Toast | 12 Responsive
+   ========================================================== */
+
+/* 1. VARIABLES */
+:root {
+  --navy: #0f2a4a;
+  --navy-light: #1b3d66;
+  --teal: #14b8a6;
+  --teal-dark: #0e9486;
+  --bg: #f4f7fb;
+  --white: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --danger: #dc2626;
+  --warning: #f59e0b;
+  --success: #16a34a;
+  --info: #2563eb;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(15, 42, 74, 0.08);
+}
+
+/* 2. BASE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+a { color: var(--teal-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { color: var(--navy); line-height: 1.25; }
+
+/* 3. NAVBAR */
+.navbar {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 62px;
+}
+.brand { color: var(--white); font-size: 1.4rem; font-weight: 700; }
+.brand span { color: var(--teal); }
+.brand:hover { text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+.nav-links a {
+  color: #dbe7f5;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+.nav-links a:hover, .nav-links a.active {
+  background: var(--navy-light);
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-user { color: var(--teal); font-size: 0.9rem; padding: 0 8px; }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+/* 4. BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+  text-align: center;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+.btn-outline:hover { background: var(--white); color: var(--navy); }
+.btn-danger { background: var(--danger); color: var(--white); }
+.btn-small { padding: 6px 12px; font-size: 0.85rem; }
+.btn-block { width: 100%; }
+.nav-btn { background: var(--teal) !important; color: var(--white) !important; }
+
+/* 5. HERO */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #12636b 100%);
+  color: var(--white);
+  padding: 90px 0 100px;
+  text-align: center;
+}
+.hero h1 { color: var(--white); font-size: 2.8rem; margin-bottom: 16px; }
+.hero h1 span { color: var(--teal); }
+.hero p { max-width: 640px; margin: 0 auto 30px; color: #cfdcec; font-size: 1.1rem; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.badge {
+  display: inline-block;
+  background: rgba(20, 184, 166, 0.18);
+  color: var(--teal);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+/* 6. SECTIONS & CARDS */
+.section { padding: 64px 0; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 10px; }
+.section-sub { text-align: center; color: var(--muted); margin-bottom: 40px; }
+.grid { display: grid; gap: 22px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.feature-card { text-align: center; transition: transform 0.2s; }
+.feature-card:hover { transform: translateY(-5px); }
+.icon { font-size: 2.2rem; margin-bottom: 10px; }
+.feature-card h3 { margin-bottom: 8px; }
+.feature-card p { color: var(--muted); font-size: 0.95rem; }
+.step-num {
+  width: 46px; height: 46px;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.2rem;
+  margin: 0 auto 12px;
+}
+
+/* 7. FORMS */
+.form-wrap { display: flex; justify-content: center; padding: 50px 20px; }
+.form-card { width: 100%; max-width: 440px; }
+.form-card h2 { text-align: center; margin-bottom: 6px; }
+.form-card .sub { text-align: center; color: var(--muted); margin-bottom: 22px; font-size: 0.95rem; }
+.form-group { margin-bottom: 16px; }
+label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; color: var(--navy); }
+input, select, textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.97rem;
+  font-family: inherit;
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+textarea { resize: vertical; min-height: 100px; }
+.error-msg { color: var(--danger); font-size: 0.85rem; margin-top: 4px; min-height: 1em; }
+.form-alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  display: none;
+}
+.form-alert.show { display: block; }
+.form-alert.error { background: #fee2e2; color: #991b1b; }
+.form-alert.success { background: #dcfce7; color: #166534; }
+.form-footer { text-align: center; margin-top: 18px; font-size: 0.93rem; color: var(--muted); }
+
+/* 8. DASHBOARD */
+.page-header { padding: 34px 0 10px; }
+.page-header h1 { font-size: 1.8rem; }
+.page-header p { color: var(--muted); }
+.stat-card { text-align: center; padding: 20px; }
+.stat-card .num { font-size: 2.2rem; font-weight: 700; color: var(--navy); }
+.stat-card .lbl { color: var(--muted); font-size: 0.9rem; }
+.stat-card.pending { border-top: 4px solid var(--warning); }
+.stat-card.progress { border-top: 4px solid var(--info); }
+.stat-card.resolved { border-top: 4px solid var(--success); }
+.stat-card.total { border-top: 4px solid var(--navy); }
+.dash-layout { display: grid; grid-template-columns: 360px 1fr; gap: 24px; margin: 24px 0 50px; align-items: start; }
+
+/* 9. ISSUES */
+.toolbar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.toolbar input { flex: 2; min-width: 160px; }
+.toolbar select { flex: 1; min-width: 130px; }
+.issue-list { display: grid; gap: 14px; }
+.issue-card { padding: 18px 20px; }
+.issue-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.issue-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+.issue-meta { font-size: 0.82rem; color: var(--muted); margin: 4px 0 8px; }
+.issue-desc { font-size: 0.95rem; margin-bottom: 12px; }
+.issue-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.issue-actions select { width: auto; padding: 6px 10px; font-size: 0.85rem; }
+.tag {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.tag.Pending { background: #fef3c7; color: #92400e; }
+.tag.In-Progress { background: #dbeafe; color: #1e40af; }
+.tag.Resolved { background: #dcfce7; color: #166534; }
+.prio { font-size: 0.78rem; font-weight: 600; margin-right: 6px; }
+.prio.High { color: var(--danger); }
+.prio.Medium { color: var(--warning); }
+.prio.Low { color: var(--success); }
+.empty {
+  text-align: center;
+  padding: 44px 20px;
+  color: var(--muted);
+  background: var(--white);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+}
+.empty .icon { font-size: 2.6rem; }
+
+/* Instructions page */
+.info-list { padding-left: 20px; }
+.info-list li { margin-bottom: 8px; }
+.faq details { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+.faq summary { cursor: pointer; font-weight: 600; color: var(--navy); }
+.faq p { margin-top: 8px; color: var(--muted); }
+
+/* 10. FOOTER */
+.footer { background: var(--navy); color: #b6c6dc; padding: 30px 0; text-align: center; margin-top: auto; font-size: 0.92rem; }
+.footer strong { color: var(--white); }
+.footer a { color: var(--teal); }
+
+/* 11. TOAST */
+.toast {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 13px 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 999;
+  border-left: 5px solid var(--teal);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* 12. RESPONSIVE */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .dash-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 62px; left: 0; right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 10px 20px 18px;
+    align-items: stretch;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; }
+  .hero { padding: 60px 0 70px; }
+  .hero h1 { font-size: 2rem; }
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .section { padding: 44px 0; }
+}

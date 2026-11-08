@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | CampusFix</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <main class="container" style="padding-bottom:50px">
+    <div class="page-header">
+      <h1>Admin Panel</h1>
+      <p>View every reported issue and update its status as work progresses.</p>
+    </div>
+
+    <section class="grid grid-4" id="stats" style="margin-bottom:26px"></section>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search by title, place, details..." />
+      <select id="filter-status">
+        <option value="">All status</option>
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Resolved</option>
+      </select>
+      <select id="filter-category">
+        <option value="">All categories</option>
+        <option>WiFi / Internet</option>
+        <option>Electricity</option>
+        <option>Water</option>
+        <option>Hostel</option>
+        <option>Classroom</option>
+        <option>Mess / Food</option>
+        <option>Cleanliness</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="issue-list" id="issue-list"></div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/issues.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
