@@ -66,4 +66,4 @@ Open the folder in VS Code and use the Live Server extension (or just double-cli
 | Member 3 | | Documentation, video script, submission file, viva material |
 | Member Name | | Anmol Thakur|
 | Reg. No. | | 12608120 |
-| Contribution | | Working as Echnologies and Future Scope |
+| Contribution | | Working on Content, testing, GitHub and deployment |
